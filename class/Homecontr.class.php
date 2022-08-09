@@ -15,12 +15,10 @@ class homeContr extends home
     {
         if($this->emptyInput() == false)
         {
-            //header("location: home.php?error=emptyinput");
             exit();
         }
         if($this->isNumber() == false)
         {
-            //header("location: home.php?error=invaliduserid");
             exit();
         }
         return $this->showPlaylist($this->userid, $this->username);

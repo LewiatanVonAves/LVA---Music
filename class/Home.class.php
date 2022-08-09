@@ -15,7 +15,6 @@ class home extends Dbh
         if(!$stmt->execute(array($userid)))
         {
             $stmt = null;
-            //header("location: ../home.php?error=stmtfailed");
             exit();
         }
 
@@ -36,13 +35,12 @@ class home extends Dbh
             if(!$stmt->execute(array($playlistid)))
             {
                 $stmt = null;
-                //header("location: ../home.php?error=stmtfailed");
                 exit();
             }
             // ??
             while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC))
             {
-                $content = $content ."<tr><td><h4>".$row2['title']."</h4></td><td><h5>".$row['username']."</h5></td></tr>";
+                $content = $content. "<tr><td><h4>".$row2['title']."</h4></td><td><h5>".$row['username']."</h5></td></tr>";
                 
             }
             $content = $content."</table>";
